@@ -35,3 +35,6 @@ function ReSetImgByJson(){
 	    }
 	};
 }
+function qq_warning(){
+	mui.alert('请在QQ客户端或浏览器打开！')
+}
