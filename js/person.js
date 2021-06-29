@@ -29,8 +29,8 @@ function handsome(){
 								if(data_json["code"] == 200){
 									document.getElementById('res').innerHTML = null;
 									document.getElementById('result').style.display = 'block';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">QQ:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">手机:<span style="margin-left: 8px;">' + data_json["data"]["mobile"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data_json["data"]["qq"] +')">QQ:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data_json["data"]["mobile"] +')">手机:<span style="margin-left: 8px;">' + data_json["data"]["mobile"] + '</span></li>';
 									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">归属地:<span style="margin-left: 8px;">' + data_json["place"]["province"] + data_json["place"]["city"] + '</span></li>';
 									mui.toast('查询成功',{ duration:'short', type:'div' }) 
 								}else if(data_json["code"] == 202){
@@ -51,8 +51,8 @@ function handsome(){
 								if(data_json["code"] == 200){
 									document.getElementById('res').innerHTML = null;
 									document.getElementById('result').style.display = 'block';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">QQ:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">手机:<span style="margin-left: 8px;">' + data_json["data"]["mobile"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data_json["data"]["qq"] +')">QQ:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data_json["data"]["mobile"] +')">手机:<span style="margin-left: 8px;">' + data_json["data"]["mobile"] + '</span></li>';
 									mui.toast('查询成功',{ duration:'short', type:'div' }) 
 								}else if(data_json["code"] == 202){
 									mui.alert(data_json["msg"]);
@@ -72,8 +72,8 @@ function handsome(){
 								if(data_json["code"] == 200){
 									document.getElementById('res').innerHTML = null;
 									document.getElementById('result').style.display = 'block';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">QQ:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">昵称:<span style="margin-left: 8px;">' + data_json["data"]["name"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data_json["data"]["qq"] +');">QQ:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ '\'' + data_json["data"]["name"] + '\'' +');">昵称:<span style="margin-left: 8px;">' + data_json["data"]["name"] + '</span></li>';
 									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">区服:<span style="margin-left: 8px;">' + data_json["data"]["server"] + '</span></li>';
 									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">注意:<span style="margin-left: 8px;">对比昵称和区服以确认是否为同一人。</span></li>';
 									mui.toast('查询成功',{ duration:'short', type:'div' }) 
@@ -95,9 +95,9 @@ function handsome(){
 								if(data_json["code"] == 200){
 									document.getElementById('res').innerHTML = null;
 									document.getElementById('result').style.display = 'block';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">QQ:<span style="margin-left: 8px;">' + input_data + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">昵称:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">区服:<span style="margin-left: 8px;">' + data_json["data"]["server"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ input_data +')">QQ:<span style="margin-left: 8px;">' + input_data + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ '\'' + data_json["data"]["qq"] + '\'' +');">昵称:<span style="margin-left: 8px;">' + data_json["data"]["qq"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ '\'' + data_json["data"]["server"] + '\'' +');">区服:<span style="margin-left: 8px;">' + data_json["data"]["server"] + '</span></li>';
 									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">注意:<span style="margin-left: 8px;">对比昵称和区服以确认是否为同一人。</span></li>';
 									mui.toast('查询成功',{ duration:'short', type:'div' }) 
 								}else if(data_json["code"] == 202){
@@ -114,4 +114,15 @@ function handsome(){
 			}else{
 				mui.alert("请输入查询参数！");
 			}
+		}
+		function copy(text){
+			var input = document.createElement('input');
+			input.setAttribute('readonly', 'readonly');
+			input.setAttribute('value', text);
+			document.body.appendChild(input);
+			input.select();
+			input.setSelectionRange(0, 9999);
+			document.execCommand('Copy');
+			input.setAttribute('hidden', 'hidden');
+			mui.toast('复制成功',{ duration:'short', type:'div' }) 
 		}

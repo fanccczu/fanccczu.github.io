@@ -31,9 +31,9 @@ function handsome(){
 								}else{
 									document.getElementById('res').innerHTML = null;
 									document.getElementById('result').style.display = 'block';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">UID:<span style="margin-left: 8px;">' + data[0].split('uid:')[1] + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">手机:<span style="margin-left: 8px;">' + data[1].split('mobile')[1] + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">归属地:<span style="margin-left: 8px;">' + data[2].split('location:')[1] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data[0].split('uid:')[1] +')">UID:<span style="margin-left: 8px;">' + data[0].split('uid:')[1] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data[1].split('mobile')[1] +')">手机:<span style="margin-left: 8px;">' + data[1].split('mobile')[1] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data[2].split('location:')[1] +')">归属地:<span style="margin-left: 8px;">' + data[2].split('location:')[1] + '</span></li>';
 								}
 						    }
 						};
@@ -48,8 +48,8 @@ function handsome(){
 								if(data_json["code"] == 200){
 									document.getElementById('res').innerHTML = null;
 									document.getElementById('result').style.display = 'block';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">UID:<span style="margin-left: 8px;">' + data_json["data"]["uid"] + '</span></li>';
-									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell">手机:<span style="margin-left: 8px;">' + data_json["data"]["mobile"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data_json["data"]["uid"] +')">UID:<span style="margin-left: 8px;">' + data_json["data"]["uid"] + '</span></li>';
+									document.getElementById('res').innerHTML += '<li class="mui-table-view-cell" onclick="copy('+ data_json["data"]["mobile"] +')">手机:<span style="margin-left: 8px;">' + data_json["data"]["mobile"] + '</span></li>';
 									mui.toast('查询成功',{ duration:'short', type:'div' }) 
 								}else if(data_json["code"] == 202){
 									mui.alert(data_json["msg"]);
@@ -66,4 +66,15 @@ function handsome(){
 			}else{
 				mui.alert("请输入查询参数！");
 			}
+		}
+		function copy(text){
+			var input = document.createElement('input');
+			input.setAttribute('readonly', 'readonly');
+			input.setAttribute('value', text);
+			document.body.appendChild(input);
+			input.select();
+			input.setSelectionRange(0, 9999);
+			document.execCommand('Copy');
+			input.setAttribute('hidden', 'hidden');
+			mui.toast('复制成功',{ duration:'short', type:'div' }) 
 		}
