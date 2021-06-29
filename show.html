@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小小工具箱</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav" onclick="warning()">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">随机买家秀图片</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<p>
+					<img id="show" src="https://apibug.cn/api/mjx/&apiKey=4449d6da03239f5a338c01bc7983711b" data-preview-src=""
+					 data-preview-group="1">
+				</p>
+			</div>
+		</div>
+		<div class="fooert">
+			<div class="mui-button-row">
+				<button onclick="ReSetImg()" type="button" class="mui-btn mui-btn-primary">换一张</button>
+				<button onclick="ReSetImgByJson()" type="button" class="mui-btn mui-btn-warning">换一张</button>
+			</div>
+			<div class="fooert copyright" align="center">
+				<br>
+				<p>&copy; Powered by <a onclick="handsome()">范某帅</a></p>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.zoom.js"></script>
+		<script src="js/mui.previewimage.js"></script>
+		<script src="js/index.js"></script>
+		<script>
+			mui.previewImage();
+
+			function handsome() {
+				mui.alert("哥就是这么帅！");
+			}
+		</script>
+	</body>
+
+</html>

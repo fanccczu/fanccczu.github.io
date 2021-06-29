@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小小工具箱</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+	</head>
+
+	<body onload="Init_visitData()">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-bars mui-pull-left mui-plus-visible"></a>
+			<h1 class="mui-title">Tool Box</h1>
+		</header>
+		<div class="mui-content">
+
+			<div class="mui-card" id="info_card" style="display: none;">
+				<div class="mui-card-header">欢迎使用小小工具箱</div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<div>现在是：<span id="now"></span></div>
+						<div>你的ip地址：<span id="ip"></span></div>
+						<div>系统：<span id="system"></span></div>
+						<div>浏览器标识：<span id="ua"></span></div>
+					</div>
+				</div>
+			</div>
+
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="select.html">
+						<span class="mui-icon"><img src="https://www.apibug.com/tools_img/qtop.jpeg" width="35px" /></span>
+						<div class="mui-media-body">信息查询</div>
+					</a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="weibo.html">
+						<span class="mui-icon"><img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_64x64.png" width="35px" /></span>
+						<div class="mui-media-body">微博查询</div>
+					</a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="show.html">
+						<span class="mui-icon"><img src="https://www.apibug.com/tools_img/maijiaxiu.png" width="35px" /></span>
+						<div class="mui-media-body">买家秀</div>
+					</a></li>
+			</ul>
+			<div class="fooert copyright" align="center">
+				<br>
+				<p>&copy; Powered by <a onclick="handsome()">范某帅</a></p>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/index.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+</html>
