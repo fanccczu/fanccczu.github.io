@@ -11,7 +11,7 @@ function Set(){
 	if(input_data){ 
 		switch(data_index){
 			case "1":
-				window.open('https://api.uomg.com/api/qq.talk?qq=' + input_data);
+				window.location.replace('https://api.uomg.com/api/qq.talk?qq=' + input_data);
 				break;
 			case "2":
 				window.location.replace('https://api.uomg.com/api/qq.joingroup?qid=' + input_data);
