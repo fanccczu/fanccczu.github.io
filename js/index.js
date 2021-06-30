@@ -38,3 +38,19 @@ function ReSetImgByJson(){
 function qq_warning(){
 	mui.alert('请在QQ客户端或浏览器打开！')
 }
+
+function confirm_password(key){
+	var btnArray = ['确定', '取消'];
+	mui.prompt('请输入功能模块密码：', '提示：看看javascript函数', '警告', btnArray, function(e) {
+		if (e.index == 0) {
+			if(e.value == '1571025887'){
+				window.location.href = './' + key + '.html';
+				mui.toast('密码正确',{ duration:'short', type:'div' });
+			}else{
+				mui.toast('密码错误',{ duration:'short', type:'div' });
+			}
+		} else {
+			mui.toast('操作取消',{ duration:'short', type:'div' });
+		}
+	})
+}
