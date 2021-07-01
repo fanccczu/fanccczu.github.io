@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>小小工具箱</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header id="header" class="mui-bar mui-bar-nav" onclick="warning()">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">抖音无水印解析</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<div class="mui-card">
+			<div class="mui-card-content">
+				<form class="mui-input-group">
+					<div style="margin-top: 20px;" class="mui-input-row">
+						<input id="val" type="text" class="mui-input-clear" placeholder="请输入抖音分享链接,文案无需删除">
+					</div>
+					<div class="mui-button-row">
+						<button onclick="Parse()" type="button" class="mui-btn mui-btn-primary">解析</button>
+					</div>
+				</form>
+			</div>
+			</div>
+
+			<div class="mui-card" id="result" style="display: none;">
+				<div class="mui-card-header mui-card-media" id="img" style="height:40vw;"></div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p id="title" style="color: #333;"></p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<div class="mui-button-row" style="margin: 0 auto;">
+						<a id="feng" class="mui-btn mui-btn-warning">封面</a>
+						<a id="video" class="mui-btn mui-btn-primary">视频</a>
+						<a id="music" class="mui-btn mui-btn-danger">音乐</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="fooert copyright" align="center">
+				<br>
+				<p>&copy; Powered by <a onclick="handsome()">范某帅</a></p>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			mui.alert('抖音短视频无水印解析。');
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = false;
+			function Parse(){
+				var patt1 = new RegExp("https://.*?/.*?/");
+				var base_url = patt1.exec(document.getElementById("val").value);
+				xhr.open('GET', 'https://apibug.cn/api/dsp/?url=' + base_url + '&apiKey=d4ccaa249822c631fe37284d9d86399f', true);
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				xhr.send();
+				xhr.onreadystatechange = function() {
+				    if (xhr.readyState == 4 && xhr.status == 200) {
+						var data = JSON.parse(xhr.responseText);
+						document.getElementById('title').innerText = data["data"]["title"];
+						document.getElementById('img').style.backgroundImage = "url(" + data["data"]["img"] + ")";
+						document.getElementById('feng').href = data["data"]["img"];
+						document.getElementById('video').href = data["data"]["videourl"];
+						document.getElementById('music').href = data["data"]["music"];
+						document.getElementById('result').style.display = 'block';
+				    }
+				};
+			}
+			function handsome(){
+						mui.alert("哥就是这么帅！");
+			}
+		</script>
+	</body>
+</html>

@@ -54,3 +54,6 @@ function confirm_password(key){
 		}
 	})
 }
+function handsome(){
+			mui.alert("哥就是这么帅！");
+		}
