@@ -21,7 +21,6 @@ function handsome(){
 				switch(data_index){
 					case "1":
 						xhr.open('GET', 'http://api.qb-api.com/wbtxt-api.php?uid=' + input_data, true);
-						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -40,7 +39,6 @@ function handsome(){
 						break;
 					case "2":
 						xhr.open('GET', 'http://api.qb-api.com/wbfc-api.php?mobile=' + input_data, true);
-						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {

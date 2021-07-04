@@ -21,7 +21,7 @@ function handsome(){
 				switch(data_index){
 					case "1":
 						xhr.open('GET', 'http://api.qb-api.com/qb-api.php?mod=cha&qq=' + input_data, true);
-						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+						// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -43,7 +43,6 @@ function handsome(){
 						break;
 					case "2":
 						xhr.open('GET', 'http://api.qb-api.com/bq-api.php?mobile=' + input_data, true);
-						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -64,7 +63,6 @@ function handsome(){
 						break;
 					case "3":
 						xhr.open('GET', 'http://api.qb-api.com/lolfc-api.php?name=' + input_data, true);
-						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -87,7 +85,6 @@ function handsome(){
 						break;
 					case "4":
 						xhr.open('GET', 'http://api.qb-api.com/lol-api.php?mod=cha&qq=' + input_data, true);
-						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
