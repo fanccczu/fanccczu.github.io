@@ -7,6 +7,7 @@ function handsome(){
 		}
 		function warning(){
 			mui.alert('仅供测试交流，严禁用于违法用途！');
+			mui.alert('接口维护中...');
 		}
 		var data_index = "1";
 		var xhr = new XMLHttpRequest();
