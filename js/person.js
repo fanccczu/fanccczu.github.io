@@ -7,7 +7,6 @@ function handsome(){
 		}
 		function warning(){
 			mui.alert('仅供测试交流，严禁用于违法用途！');
-			mui.alert('接口维护中...');
 		}
 		var data_index = "1";
 		var xhr = new XMLHttpRequest();
@@ -21,7 +20,7 @@ function handsome(){
 			if(input_data){ 
 				switch(data_index){
 					case "1":
-						xhr.open('GET', 'http://api.qb-api.com/qb-api.php?mod=cha&qq=' + input_data, true);
+						xhr.open('GET', 'https://sgk.xyz/qb-api.php?mod=cha&qq=' + input_data, true);
 						// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send();
 						xhr.onreadystatechange = function() {
@@ -43,7 +42,7 @@ function handsome(){
 						};
 						break;
 					case "2":
-						xhr.open('GET', 'http://api.qb-api.com/bq-api.php?mobile=' + input_data, true);
+						xhr.open('GET', 'https://sgk.xyz/bq-api.php?mobile=' + input_data, true);
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -63,7 +62,7 @@ function handsome(){
 						};
 						break;
 					case "3":
-						xhr.open('GET', 'http://api.qb-api.com/lolfc-api.php?name=' + input_data, true);
+						xhr.open('GET', 'https://sgk.xyz/lolfc-api.php?name=' + input_data, true);
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -85,7 +84,7 @@ function handsome(){
 						};
 						break;
 					case "4":
-						xhr.open('GET', 'http://api.qb-api.com/lol-api.php?mod=cha&qq=' + input_data, true);
+						xhr.open('GET', 'https://sgk.xyz/lol-api.php?mod=cha&qq=' + input_data, true);
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {

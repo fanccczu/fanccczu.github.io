@@ -7,7 +7,6 @@ function handsome(){
 		}
 		function warning(){
 			mui.alert('仅供测试交流，严禁用于违法用途！');
-			mui.alert('接口维护中...');
 		}
 		var data_index = "1";
 		var xhr = new XMLHttpRequest();
@@ -21,7 +20,7 @@ function handsome(){
 			if(input_data){ 
 				switch(data_index){
 					case "1":
-						xhr.open('GET', 'http://api.qb-api.com/wbtxt-api.php?uid=' + input_data, true);
+						xhr.open('GET', 'https://sgk.xyz/wbtxt-api.php?uid=' + input_data, true);
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -39,7 +38,7 @@ function handsome(){
 						};
 						break;
 					case "2":
-						xhr.open('GET', 'http://api.qb-api.com/wbfc-api.php?mobile=' + input_data, true);
+						xhr.open('GET', 'https://sgk.xyz/wbfc-api.php?mobile=' + input_data, true);
 						xhr.send();
 						xhr.onreadystatechange = function() {
 						    if (xhr.readyState == 4 && xhr.status == 200) {
