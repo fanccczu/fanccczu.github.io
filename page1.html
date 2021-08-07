@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+		<script src="js/jquery-1.8.3.min.js"></script>
+	</head>
+
+	<body onload="checkLogin()" class="mui-fullscreen">
+
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<a class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left" href="./index.html">
+				<span class="mui-icon mui-icon-left-nav"></span>后退
+			</a>
+			<h1 class="mui-center mui-title">相识</h1>
+			<a class="mui-right mui-btn mui-btn-link mui-btn-nav mui-pull-right" href="./page2.html?l">
+				前进<span class="mui-icon mui-icon-forward"></span>
+			</a>
+		</div>
+
+		<div class="mui-content">
+			<div class="mui-card animated flipInX">
+				<div class="mui-card-header mui-card-media" style="height:62vw;background-image:url(./img/meet.jpg)"></div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p>相识于 2021年05月13日 22时24分07秒</p>
+						<p style="color: #333;">因为刘靖，机缘巧合之下和阿妹相识~由而进行了长达近两个月的“网友”生涯。</p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<p style="color: #333;" id="time"></p>
+				</div>
+			</div>
+
+			<div class="mui-card animated flipInY">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						&nbsp;&nbsp;&nbsp;&nbsp;当时加阿妹微信的目的还是很单纯的~之前我们就见过好几次蛮，那时候不知道刘靖具体什么情况，指望着阿妹这里可以有京巴子的独家消息🐶。
+					</div>
+					<div class="mui-card-header mui-card-media" style="height:28vw;background-image:url(./img/wu.png)"></div>
+					<div class="mui-card-content-inner">
+						&nbsp;&nbsp;&nbsp;&nbsp;认识的第一天，孬丿阿妹发了19个捂脸的表情~现在想想应该是有一点点的尴尬哈哈哈哈哈🤦‍♂️🤦‍♀。一开始几次我叫你阿妹，你将绝不乐意昂~就丑jue我哎，现在算是“起义成功”了🤪️。
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/f.js"></script>
+		<script>
+			mui.init();
+			var base_date = new Date(2021, 4, 13);
+			base_date.setHours(22);
+			base_date.setMinutes(24);
+			base_date.setSeconds(7);
+			function t(){
+				var now_date = new Date();
+				var lastTime = (now_date - base_date) / 1000;
+				var day = parseInt(lastTime / (24 * 3600));
+				var hour = parseInt(lastTime / 60 / 60 % 24);
+				var minutes = parseInt(lastTime / 60 % 60);
+				var second = parseInt(lastTime % 60);
+				var sum = "距离我们相识已经 " + day + "天" + hour + "时" + minutes + "分" + second + "秒";
+				document.getElementById("time").innerHTML = sum;
+			}
+			t();
+			setInterval(function() {
+				t();
+			}, 1000);
+		</script>
+	</body>
+
+</html>

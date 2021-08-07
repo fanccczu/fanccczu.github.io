@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+		<script src="js/jquery-1.8.3.min.js"></script>
+	</head>
+
+	<body onload="checkLogin()" class="mui-fullscreen">
+
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<a class="mui-left mui-btn mui-btn-link mui-btn-nav mui-pull-left" href="./page2.html?l">
+				<span class="mui-icon mui-icon-left-nav"></span>后退
+			</a>
+			<h1 class="mui-center mui-title">相见</h1>
+			<a class="mui-right mui-btn mui-btn-link mui-btn-nav mui-pull-right" href="./page4.html?l">
+				前进<span class="mui-icon mui-icon-forward"></span>
+			</a>
+		</div>
+
+		<div class="mui-content">
+			
+			<div id="slider" class="mui-slider animated rubberBand">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./img/henhao.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./img/gou.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./img/henhao.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./img/biao1.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./img/shi.png">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./img/gou.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			
+			<div class="mui-card animated bounceIn">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p>相见于 2021年07月05日 21时</p>
+						&nbsp;&nbsp;&nbsp;&nbsp;头一次见面时候你说穿的是Lolita我还很好奇，以为是那种有点夸张的裙子~然后见面的时候发现超级自然😲一开始其实没怎么敢看你（可能是刚见面尴尬），然后到烧烤摊的时候才敢多看阿妹几眼哈哈哈哈哈，点菜时候你在跟人打视频，那个烧烤摊的阿姨真的就在我跟前逮着我夸你，估计是以为你是我女朋友~大概率是这样的，不然不用这么夸的，还笑意盈盈的看着我，夸了你三遍可爱🤪可惜那会刚认识，照片都太少了，都不好意思拍
+					</div>
+					<div class="mui-card-header mui-card-media" style="height:45vw;background-image:url(./img/bin.jpg)"></div>
+					<div class="mui-card-content-inner">
+						&nbsp;&nbsp;&nbsp;&nbsp;这天晚上打牌输了大冒险还涂我口红，关键是你还拍照！辣鸡~这天玩到凌晨近四点才结束，这天我超级开心哈哈哈哈哈😁革命友谊的Start前夕<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;PS:傻逼茯苓钥匙带错了，我们还得去开宾馆睡觉，好孬撇🙁
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/f.js"></script>
+		<script>
+			mui.init();
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 1500
+			});
+		</script>
+	</body>
+
+</html>
