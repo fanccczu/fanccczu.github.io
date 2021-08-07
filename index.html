@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小小工具箱</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+	</head>
+
+	<body onload="Init_visitData()">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-bars mui-pull-left mui-plus-visible"></a>
+			<h1 class="mui-title">Tool Box</h1>
+		</header>
+		<div class="mui-content">
+
+			<div class="mui-card" id="info_card" style="display: none;">
+				<div class="mui-card-header">欢迎使用小小工具箱</div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<div>现在是：<span id="now"></span></div>
+						<div>你的ip地址：<span id="ip"></span></div>
+						<div>系统：<span id="system"></span></div>
+						<div>浏览器标识：<span id="ua"></span></div>
+					</div>
+				</div>
+			</div>
+
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="select.html">
+						<span class="mui-icon"><img src="https://www.apibug.com/tools_img/qtop.jpeg" width="35px" /></span>
+						<div class="mui-media-body" style="padding-top: 1px !important;">信息查询</div>
+					</a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="weibo.html">
+						<span class="mui-icon"><img src="http://www.sinaimg.cn/blog/developer/wiki/LOGO_64x64.png" width="35px" /></span>
+						<div class="mui-media-body" style="padding-top: 1px !important;">微博查询</div>
+					</a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#" onclick="confirm_password('show')">
+						<span class="mui-icon"><img src="https://www.apibug.com/tools_img/maijiaxiu.png" width="35px" /></span>
+						<div class="mui-media-body" style="padding-top: 1px !important;">淘宝</div>
+					</a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="qqq.html">
+						<span class="mui-icon"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fa3.att.hudong.com%2F27%2F86%2F01300542501208139720866516827_s.jpg&refer=http%3A%2F%2Fa3.att.hudong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1627550847&t=4266ece9aaec2e08425766f327b7aae1" width="35px" /></span>
+						<div class="mui-media-body" style="padding-top: 1px !important;">QQ对话/加群</div>
+					</a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#" onclick="confirm_password('kuai')">
+						<span class="mui-icon"><img src="https://pic.rmb.bdstatic.com/bjh/00894e3a5f11012a618683c38ea5ba2e.png" width="35px" /></span>
+						<div class="mui-media-body" style="padding-top: 1px !important;">快手</div>
+					</a></li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="parse.html">
+						<span class="mui-icon"><img src="https://www.apibug.com/tools_img/dsp.png" width="35px" /></span>
+						<div class="mui-media-body" style="padding-top: 1px !important;">无水印解析</div>
+					</a></li>
+			</ul>
+			<div class="fooert copyright" align="center">
+				<br>
+				<p>&copy; Powered by <a onclick="handsome()">范某帅</a></p>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/index.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		</script>
+	</body>
+</html>
