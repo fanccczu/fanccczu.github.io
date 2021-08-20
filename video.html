@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+		.embed-responsive {
+			position: relative;
+			display: block;
+			height: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		
+		.embed-responsive-item,
+		iframe,
+		embed,
+		object,
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			height: 100%;
+			width: 100%;
+			border: 0;
+		}
+		
+		.embed-responsive-4by3 {
+			padding-bottom: 75%;
+		}</style>
+	</head>
+	<body class="mui-fullscreen">
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">视频解析</h1>
+		</header>
+
+		<div class="mui-content">
+
+			<div class="mui-card">
+				<ul class="mui-table-view mui-table-view-radio">
+					<li class="mui-table-view-cell mui-selected" data-index="1">
+						<a class="mui-navigate-right">线路一（默认）</a>
+					</li>
+					<li class="mui-table-view-cell" data-index="2">
+						<a class="mui-navigate-right">线路二</a>
+					</li>
+					<li class="mui-table-view-cell" data-index="3">
+						<a class="mui-navigate-right">线路三</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<form class="mui-input-group">
+						<div style="margin-top: 20px;" class="mui-input-row">
+							<input id="val" type="text" class="mui-input-clear" placeholder="请输入视频链接地址...">
+						</div>
+						<div class="mui-button-row">
+							<button onclick="Query()" type="button" class="mui-btn mui-btn-primary">解析</button>
+							<button onclick="Reset()" type="button" class="mui-btn mui-btn-danger">清空</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="mui-card" id="card" style="display: none;">
+				<div class="embed-responsive embed-responsive-4by3 mui-text-center">
+					<iframe class="embed-responsive-item" id="ifrm" allowfullscreen="true" webkitallowfullscreen="true"
+						mozallowfullscreen="true" src=""></iframe>
+				</div>
+			</div>
+
+			<div class="mui-card animated bounceIn">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<p>视频解析能做什么：</p>
+						<p>&nbsp;&nbsp;1. 免费观看各大视频站的vip视频</p>
+						<p>&nbsp;&nbsp;2. 过滤视频前的广告 不用等待</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<footer class="fooert copyright" align="center">
+			<br>
+			<p>&copy; Powered by <a onclick="handsome()">范某帅</a></p>
+		</footer>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/video.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+	</script>
+</html>
